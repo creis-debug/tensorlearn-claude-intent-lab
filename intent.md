@@ -9,7 +9,7 @@ Sources: `inputs/01-approved-prd.md` (PRD N-17, approved 2026-09-18), `inputs/02
 ## Proposed outcome
 
 - **O-1** The patient is told when a result is ready for their review in the existing authenticated portal. PRD: "Notify the patient when a result is ready for their review in the existing authenticated portal."
-- **O-2** "Ready" means the lab upload is complete **and** a doctor has reviewed **and** released the result. Lab upload alone never makes a result eligible. PRD: "A doctor must review and release the result before any notification is eligible." Product owner (notes): "'Ready' must not mean that the laboratory upload merely finished."
+- **O-2** "Ready" means a doctor has reviewed **and** released the result. Lab upload alone never makes a result eligible. PRD: "A doctor must review and release the result before any notification is eligible." Product owner (notes): "'Ready' must not mean that the laboratory upload merely finished."
 - **O-3** The message says only that an update is available and points the patient to the existing authenticated portal.
 
 ### How success will be observed
@@ -59,7 +59,7 @@ Sources: `inputs/01-approved-prd.md` (PRD N-17, approved 2026-09-18), `inputs/02
 
 ```json
 {
-  "notifyWhen": ["lab-upload-complete", "doctor-reviewed", "released"],
+  "notifyWhen": ["doctor-reviewed", "released"],
   "messageMayInclude": ["update-available"],
   "inScope": ["existing-portal-route", "duplicate-prevention", "delivery-failure-handling"],
   "openDecisions": [
